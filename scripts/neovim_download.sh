@@ -47,8 +47,8 @@ function download_neovim() {
 	local download_path=""
 
 	if [ "$os" == "Linux" ]; then
-		download_url="https://github.com/neovim/neovim/releases/download/${version}/nvim.appimage"
-		download_path="$download_dir/nvim-$version-linux.appimage"
+		download_url="https://github.com/neovim/neovim/releases/download/${version}/nvim-linux-${arch_type}.appimage"
+		download_path="$download_dir/nvim-$version-linux-$arch_type.appimage"
 
 		set +e # Prevent termination based on compare_version's return
 		compare_versions "$version" v0.10.3
