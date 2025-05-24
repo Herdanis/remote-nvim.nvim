@@ -49,7 +49,12 @@ function download_neovim() {
 	if [ "$os" == "Linux" ]; then
 		download_url="https://github.com/neovim/neovim/releases/download/${version}/nvim-linux-${arch_type}.appimage"
 		download_path="$download_dir/nvim-$version-linux-$arch_type.appimage"
+		printf '%q\n' "$version" "$arch_type"
 		echo $download_url
+
+		if ! curl --head --silent --fail "$download_url"; then
+			echo ">>> HEAD $download_url failed; falling back…"
+		fi
 
 		set +e # Prevent termination based on compare_version's return
 		compare_versions "$version" v0.10.3
