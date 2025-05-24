@@ -47,7 +47,7 @@ function download_neovim() {
 	local download_path=""
 
 	if [ "$os" == "Linux" ]; then
-		download_url="https://github.com/neovim/neovim/releases/download/v0.11.1/nvim-linux-x86_64.appimage"
+		download_url="https://github.com/neovim/neovim/releases/download/${version}/nvim-linux-${arch_type}.appimage"
 		download_path="$download_dir/nvim-$version-linux-$arch_type.appimage"
 		printf '%q\n' "$version" "$arch_type"
 		echo $download_url
