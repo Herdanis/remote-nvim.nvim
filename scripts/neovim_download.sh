@@ -32,7 +32,7 @@ function download() {
 	local output_file="$2"
 
 	if [ "$downloader" = "curl" ]; then
-		curl -lO "$url"
+		curl -fslo "$output_file" "$url"
 	elif [ "$downloader" = "wget" ]; then
 		wget --quiet --output-document="$output_file" "$url"
 	fi
