@@ -183,5 +183,5 @@ elif [[ $download_type == "system" ]]; then
 	echo "Cannot download a system-type Neovim release. Choose from either 'source' or 'binary'."
 	exit 1
 else
-	download_neovim "$os_name" "$nvim_version" "$download_dir" "$arch_type"
+	download_neovim_source "$nvim_version" "$download_dir"
 fi
