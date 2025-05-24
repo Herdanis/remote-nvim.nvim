@@ -238,7 +238,7 @@ describe("Provider", function()
 
       provider._remote_neovim_version = nil
       provider._remote_os = "Linux"
-      provider._remote_neovim_install_method = "source"
+      provider._remote_neovim_install_method = "binary"
     end)
 
     it("when in offline mode but GitHub access is turned off", function()
